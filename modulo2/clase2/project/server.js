@@ -1,4 +1,6 @@
 const http = require('http');
+const fs = require('fs');
+const path = require('path'); //modulo para construir rutas de archivos
 
 const puerto = 3000;
 
@@ -17,8 +19,17 @@ const servidor = http.createServer((req, res) => {
        res.writeHead(200, {'Content-Type': 'application/json'});
        res.end(jsonData); //cerrar la respuesta y se envía el JSON al cliente
     } else {
-        res.writeHead(404, {'Content-Type': 'text/plain'});
-        res.end('Ruta no encontrado'); // si la ruta no coincide, se devuelve un error 404
+       const filePath = path.join(__dirname, 'public', '404.html'); // ruta al archivo HTML
+       
+       fs.readFile(filePath, (err, data) => {
+           if (err) {
+               res.writeHead(500, {'Content-Type': 'text/plain'});
+               res.end('Error interno del servidor');
+           } else {
+               res.writeHead(404, {'Content-Type': 'text/html'});
+               res.end(data); // enviar el archivo HTML al cliente
+           }
+       });
     }
 
 });

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Agregar peliculas</h1>
+    <label for="titulo">titulo de la pelicula</label>
+    <input type="text" id="titulo" placeholder="titulo de la pelicula">
+    <button id="agregar" onclick="enviarPelicula()">Agregar</button>
+
+    <p id="respuesta"></p>
+
+    <script>
+        async function enviarPelicula() {
+            const titulo = document.getElementById('titulo').value;
+            
+            if(!titulo) {
+                alert('Por favor ingrese un titulo');
+                return;
+            }
+            fetch('/api/peliculas', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ titulo })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('respuesta').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('respuesta').innerText = 'Error al agregar la pelicula';
+            });
+        }
+    </script>
+</body>
+</html>
