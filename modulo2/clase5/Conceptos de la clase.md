@@ -36,10 +36,7 @@ npm install mongoose
 ```js
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/mi_basedatos', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect('mongodb://localhost:27017/mi_basedatos')
 .then(() => console.log('Conectado a MongoDB'))
 .catch(err => console.error('Error de conexión:', err));
 ```
