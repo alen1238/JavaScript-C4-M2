@@ -1,7 +1,7 @@
 # Manejo de Errores en Express.js
 
 
-## 1 Ejemplo sencillo: falta de validación en parámetros
+## 1 Ejemplo: falta de validación en parámetros
 
 En este primer ejemplo veremos qué ocurre cuando no validamos la entrada del usuario.
 
@@ -32,8 +32,7 @@ Este ejemplo muestra la **importancia de validar los datos de entrada**.
 
 ## 2 Lanzando un objeto Error
 
-Ahora veremos qué ocurre si **lanzamos un error** explícitamente en una
-ruta.
+Ahora veremos qué ocurre si **lanzamos un error** explícitamente en una ruta.
 
 ``` js
 // servidor.js
@@ -56,7 +55,7 @@ app.get('/error', (req, res) => {
   res.send(`Hola ${req.query.nombre}`);
 });
 
-// Otra ruta para demostrar que también se rompe
+// Otra ruta 
 app.get('/saludo', (req, res) => {
   res.send("¡Hola desde otra ruta!");
 });
@@ -66,7 +65,7 @@ app.listen(3000, () => {
 });
 ```
 
-Si probamos `/error` sin el parámetro `nombre`, veremos un **error interno (500)** y el servidor se rompe.\
+Si probamos `/error` sin el parámetro `nombre`, veremos un **error interno (500)** y el servidor pueda que se rompe.\
 Esto enseña que los **errores no manejados interrumpen la aplicación**.
 
 ------------------------------------------------------------------------
@@ -195,7 +194,7 @@ app.listen(3000, () => {
 });
 ```
 
-Con este enfoque, los errores ya **no tumban el servidor** y el cliente recibe un JSON explicativo.
+Con este enfoque, el cliente recibe un JSON explicativo.
 
 ------------------------------------------------------------------------
 
