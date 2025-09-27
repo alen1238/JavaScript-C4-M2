@@ -1,6 +1,6 @@
-# 🎶 Proyecto Final – API REST: Batallas de Playlists
+# Proyecto Final – API REST: Batallas de Playlists
 
-## 📌 Descripción
+## Descripción
 Este proyecto consiste en el desarrollo de una **API REST** con **Express** y **MongoDB** que permite a los usuarios competir con sus playlists, generando un **ranking de las más votadas**.  
 
 Es un proyecto integrador que aplica los conocimientos adquiridos en el curso:  
@@ -68,7 +68,7 @@ proyecto-playlists/
 
 ---
 
-## 🚀 Endpoints principales
+## Endpoints principales
 ### Usuarios
 - `POST /api/auth/register` → Registrar usuario.  
 - `POST /api/auth/login` → Autenticación con JWT.  
@@ -86,7 +86,7 @@ proyecto-playlists/
 
 ---
 
-## ✅ Tecnologías utilizadas
+## Tecnologías utilizadas
 - **Node.js** + **Express**  
 - **MongoDB** + **Mongoose**  
 - **JWT** para autenticación  
@@ -95,7 +95,7 @@ proyecto-playlists/
 
 ---
 
-## 📖 Instalación y uso
+## Instalación y uso
 1. Clonar el repositorio:  
    ```bash
    git clone https://github.com/tuusuario/proyecto-playlists.git
@@ -117,7 +117,7 @@ proyecto-playlists/
 
 ---
 
-## 🏆 Criterios de evaluación
+## Criterios de evaluación
 - Correcto uso de Express y Mongoose.  
 - Implementación de JWT para rutas privadas.  
 - Validaciones y middlewares (incluyendo votos únicos).  
